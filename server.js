@@ -5,23 +5,62 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title:'Article one | Jithin Jose',
-    heading:'Article One',
-    date:'Sep 21, 2016',
-    content:`<p>
-                This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-            </p>
-            <p>
-                This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-            </p>
-            <p>
-                his is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
+var articles = {
+    'article-one' : {
+        title:'Article one | Jithin Jose',
+        heading:'Article One',
+        date:'Sep 21, 2016',
+        content:`<p>
+                    This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
                 </p>
-            <p>
-                This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-            </p>
-    `
+                <p>
+                    This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
+                </p>
+                <p>
+                    his is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
+                    </p>
+                <p>
+                    This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
+                </p>
+        `
+    },
+    'article-two' : {
+        title:'Article Two | Jithin Jose',
+        heading:'Article Two',
+        date:'Sep 21, 2016',
+        content:`<p>
+                    This is the content for the Second article. This is the content for the Second article. This is the content for the Second article. This is the content for the Second article.
+                </p>
+                <p>
+                    This is the content for the Second article. This is the content for the Second article. This is the content for the Second article. This is the content for the Second article.
+                </p>
+                <p>
+                    his is the content for the Second article. This is the content for the Second article. This is the content for the Second article. This is the content for the Second article.
+                    </p>
+                <p>
+                    This is the content for the Second article. This is the content for the Second article. This is the content for the first article. This is the content for the first article.
+                </p>
+        `
+    },
+    'article-three' : {
+        title:'Article Three | Jithin Jose',
+        heading:'Article Three',
+        date:'Sep 21, 2016',
+        content:`<p>
+                    This is the content for the Third article. This is the content for the Third article. This is the content for the Third article. This is the content for the Third article.
+                </p>
+                <p>
+                    This is the content for the Third article. This is the content for the Third article. This is the content for the fiThirdrst article. This is the content for the Third article.
+                </p>
+                <p>
+                    his is the content for the Third article. This is the content for the Third article. This is the content for the Third article. This is the content for the Third article.
+                    </p>
+                <p>
+                    This is the content for the Third article. This is the content for the Third article. This is the content for the Third article. This is the content for the Third article.
+                </p>
+        `
+    }
+
 };
 
 function createTemplate(data){
@@ -63,16 +102,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
-});
-
-app.get('/article-two', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName', function (req, res) {
+    //articleName = article-one
+    var articleName = req.params.articleName;
+  res.send(createTemplate(article[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
