@@ -28,12 +28,10 @@ button.onclick = function(){
 
 var submit = document.getElementById('btn_submit');
 submit.onclick = function(){
-    
-    var nameInput = document.getElementById('name');
-    var name = nameInput.value;
+
     //Create a request object
     var request = new XMLHttpRequest();
-      
+
     //Capture the response and store it in a variable
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
@@ -51,14 +49,12 @@ submit.onclick = function(){
             }
         }
     };
-      
-      //Make a request
-      request.open('GET', 'http://jithijose.imad.hasura-app.io/submit-name?name=' + name, true);
-      request.send(null);
-    
-    
-    
-    
+
+    //Make a request
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+    request.open('GET', 'http://jithijose.imad.hasura-app.io/submit-name?name=' + name, true);
+    request.send(null);
 };
 
 
