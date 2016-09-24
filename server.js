@@ -12,17 +12,7 @@ var articles = {
         date:'Sep 21, 2016',
         content:`<p>
                     This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-                </p>
-                <p>
-                    This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-                </p>
-                <p>
-                    his is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-                    </p>
-                <p>
-                    This is the content for the first article. This is the content for the first article. This is the content for the first article. This is the content for the first article.
-                </p>
-        `
+                </p>`
     },
     'article-two' : {
         title:'Article Two | Jithin Jose',
@@ -30,17 +20,7 @@ var articles = {
         date:'Sep 21, 2016',
         content:`<p>
                     This is the content for the Second article. This is the content for the Second article. This is the content for the Second article. This is the content for the Second article.
-                </p>
-                <p>
-                    This is the content for the Second article. This is the content for the Second article. This is the content for the Second article. This is the content for the Second article.
-                </p>
-                <p>
-                    his is the content for the Second article. This is the content for the Second article. This is the content for the Second article. This is the content for the Second article.
-                    </p>
-                <p>
-                    This is the content for the Second article. This is the content for the Second article. This is the content for the first article. This is the content for the first article.
-                </p>
-        `
+                </p>`
     },
     'article-three' : {
         title:'Article Three | Jithin Jose',
@@ -48,17 +28,7 @@ var articles = {
         date:'Sep 21, 2016',
         content:`<p>
                     This is the content for the Third article. This is the content for the Third article. This is the content for the Third article. This is the content for the Third article.
-                </p>
-                <p>
-                    This is the content for the Third article. This is the content for the Third article. This is the content for the fiThirdrst article. This is the content for the Third article.
-                </p>
-                <p>
-                    his is the content for the Third article. This is the content for the Third article. This is the content for the Third article. This is the content for the Third article.
-                    </p>
-                <p>
-                    This is the content for the Third article. This is the content for the Third article. This is the content for the Third article. This is the content for the Third article.
-                </p>
-        `
+                </p>`
     }
 
 };
@@ -91,6 +61,9 @@ function createTemplate(data){
                 <div>
                     ${content}
                 </div>
+                <hr/>
+                <input type="text" id="comment" placeholder="add comment here" />
+                <input type="submit" id="btn_comment" value="Add Comment" />
             </div>
         </body>
     </html>
