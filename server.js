@@ -64,6 +64,9 @@ function createTemplate(data){
                 <hr/>
                 <input type="text" id="comment" placeholder="add comment here" />
                 <input type="submit" id="btn_comment" value="Add Comment" />
+                <h3>Comments</h3>
+                <ul>
+                </ul>
             </div>
         </body>
     </html>
