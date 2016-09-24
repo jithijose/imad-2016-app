@@ -58,6 +58,11 @@ submit.onclick = function(){
 };
 
 
+var btnComment = document.getElementByID('btn_comment');
+btn_comment.onClick = function(){
+    
+    
+};
 
 
 
